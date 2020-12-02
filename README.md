@@ -6,7 +6,7 @@ https://www.figma.com/file/KycApYfRpOsEZzjiYBDYOG/Receipt?node-id=0%3A1
 
 ⭐️ Main goal: using auto layout to design your application as much similar to the design as possible.
 
-🥇 Gold goal: cover edges case (invalid input)
+🥇 Golden goal: cover edges case (invalid input)
 
 * **Important** : DO NOT push your code to master branch.
 
