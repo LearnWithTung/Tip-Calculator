@@ -61,5 +61,12 @@ extension ViewController: UITextFieldDelegate {
         self.thirdPercentTextfield.resignFirstResponder()
         return true
     }
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == firstPercentTextfield {
+            print("Done first percent!")
+        }
+    }
 
 }
