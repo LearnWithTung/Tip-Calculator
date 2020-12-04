@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEC1C7552578BFB200818D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC1C7542578BFB200818D42 /* Main.storyboard */; };
+		CEC73FC12578C8C4003BEEF8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC73FC02578C8C4003BEEF8 /* FirstViewController.swift */; };
 		DF2DB7D125776012005F922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DB7D025776012005F922C /* AppDelegate.swift */; };
 		DF2DB7D325776012005F922C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DB7D225776012005F922C /* SceneDelegate.swift */; };
 		DF2DB7DA25776014005F922C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF2DB7D925776014005F922C /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEC1C7542578BFB200818D42 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CEC73FC02578C8C4003BEEF8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		DF2DB7CD25776012005F922C /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2DB7D025776012005F922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF2DB7D225776012005F922C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +58,9 @@
 			children = (
 				DF2DB7D025776012005F922C /* AppDelegate.swift */,
 				DF2DB7D225776012005F922C /* SceneDelegate.swift */,
+				CEC73FC02578C8C4003BEEF8 /* FirstViewController.swift */,
 				DF2DB7D925776014005F922C /* Assets.xcassets */,
+				CEC1C7542578BFB200818D42 /* Main.storyboard */,
 				DF2DB7DB25776014005F922C /* LaunchScreen.storyboard */,
 				DF2DB7DE25776014005F922C /* Info.plist */,
 			);
@@ -118,6 +124,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC1C7552578BFB200818D42 /* Main.storyboard in Resources */,
 				DF2DB7DD25776014005F922C /* LaunchScreen.storyboard in Resources */,
 				DF2DB7DA25776014005F922C /* Assets.xcassets in Resources */,
 			);
@@ -130,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC73FC12578C8C4003BEEF8 /* FirstViewController.swift in Sources */,
 				DF2DB7D125776012005F922C /* AppDelegate.swift in Sources */,
 				DF2DB7D325776012005F922C /* SceneDelegate.swift in Sources */,
 			);
