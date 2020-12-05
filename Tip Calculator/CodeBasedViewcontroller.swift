@@ -21,7 +21,7 @@ class CodeBasedViewcontroller: UIViewController {
         text.placeholder = "$0"
         text.borderStyle = .roundedRect
         text.font = UIFont.systemFont(ofSize: 30)
-        text.textAlignment = .right
+        text.textAlignment = .center
         text.background = UIImage(named: "vector4")
         return text
     }()
@@ -31,7 +31,7 @@ class CodeBasedViewcontroller: UIViewController {
         text.placeholder = "$0"
         text.borderStyle = .roundedRect
         text.font = UIFont.systemFont(ofSize: 30)
-        text.textAlignment = .right
+        text.textAlignment = .center
         text.background = UIImage(named: "vector4")
         return text
     }()
@@ -41,7 +41,7 @@ class CodeBasedViewcontroller: UIViewController {
         text.placeholder = "$0"
         text.borderStyle = .roundedRect
         text.font = UIFont.systemFont(ofSize: 30)
-        text.textAlignment = .right
+        text.textAlignment = .center
         text.background = UIImage(named: "vector4")
         return text
     }()
@@ -132,7 +132,8 @@ class CodeBasedViewcontroller: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         imageView.frame = CGRect(x: view.frame.width/4,
-                                 y: 80, width: view.frame.width/2,
+                                 y: 40,
+                                 width: view.frame.width/2,
                                  height: view.frame.width/2)
     }
     
@@ -183,10 +184,10 @@ class CodeBasedViewcontroller: UIViewController {
     
     private func custom(){
         NSLayoutConstraint.activate([
-            stackView1.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 100),
+            stackView1.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 50),
             stackView1.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 20),
             stackView1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            stackView1.heightAnchor.constraint(equalToConstant: 70),
+            stackView1.heightAnchor.constraint(equalToConstant: 72),
             stackView2.topAnchor.constraint(equalTo: stackView1.bottomAnchor, constant: 10),
             stackView2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
