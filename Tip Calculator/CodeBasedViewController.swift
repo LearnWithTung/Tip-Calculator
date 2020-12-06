@@ -212,6 +212,16 @@ class CodeBasedViewController: UIViewController {
             calculateButton.heightAnchor.constraint(equalToConstant: 60)
         ])
         
+        let bottomEdgeView = UIImageView()
+        calculateView.addSubview(bottomEdgeView)
+        bottomEdgeView.translatesAutoresizingMaskIntoConstraints = false
+        bottomEdgeView.image = UIImage(named: "BottomEdge 1-1")
+        NSLayoutConstraint.activate([
+            bottomEdgeView.leadingAnchor.constraint(equalTo: calculateView.leadingAnchor),
+            bottomEdgeView.trailingAnchor.constraint(equalTo: calculateView.trailingAnchor),
+            bottomEdgeView.bottomAnchor.constraint(equalTo: calculateView.bottomAnchor)
+        ])
+        
         bottomStackView.addArrangedSubview(yourBillView)
         bottomStackView.addArrangedSubview(calculateView)
         bottomStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -230,15 +240,7 @@ class CodeBasedViewController: UIViewController {
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-//        let bottomEdgeView = UIImageView()
-//        bottomEdgeView.translatesAutoresizingMaskIntoConstraints = false
-//        bottomEdgeView.image = UIImage(named: "BottomEdge 1-1")
-//        self.view.addSubview(bottomEdgeView)
-//        NSLayoutConstraint.activate([
-//            bottomEdgeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            bottomEdgeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            bottomEdgeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-//        ])
+
         
         
     }
