@@ -18,15 +18,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         firstPercentTextfield.delegate = self
         secondPercentTextfield.delegate = self
         thirdPercentTextfield.delegate = self
         totalBillTextField.delegate = self
 
-        totalBillTextField.isUserInteractionEnabled = false
-        
-
+        totalBillTextField.isUserInteractionEnabled = false       
         // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     
@@ -68,5 +71,9 @@ extension ViewController: UITextFieldDelegate {
             print("Done first percent!")
         }
     }
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        <#code#>
+//    }
 
 }
