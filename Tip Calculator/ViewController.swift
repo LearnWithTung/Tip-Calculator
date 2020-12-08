@@ -36,9 +36,19 @@ class ViewController: UIViewController {
     @IBAction func calculateTipsPressed(_ sender: Any) {
         var totalBill: Float = 0.0
         
-        let firstBill = firstPercentTextfield.text!.isEmpty ? "0" : firstPercentTextfield.text!
-        let secondBill = secondPercentTextfield.text!.isEmpty ? "0" : secondPercentTextfield.text!
-        let thirdBill = thirdPercentTextfield.text!.isEmpty ? "0" : thirdPercentTextfield.text!
+//        if let text = firstPercentTextfield.text {
+//            if text.isEmpty {
+//                first
+//
+//            }
+//            else {
+//
+//            }
+//        }
+        
+        let firstBill = firstPercentTextfield.text!.isEmpty ? "0" : firstPercentTextfield.text!.components(separatedBy: "$")[1].trimmingCharacters(in: .whitespacesAndNewlines)
+        let secondBill = secondPercentTextfield.text!.isEmpty ? "0" : secondPercentTextfield.text!.components(separatedBy: "$")[1].trimmingCharacters(in: .whitespacesAndNewlines)
+        let thirdBill = thirdPercentTextfield.text!.isEmpty ? "0" : thirdPercentTextfield.text!.components(separatedBy: "$")[1].trimmingCharacters(in: .whitespacesAndNewlines)
         
         totalBill = Float(firstBill)! * 1.2 + Float(secondBill)! * 1.1 + Float(thirdBill)! * 1.1
         print(totalBill)
@@ -72,8 +82,69 @@ extension ViewController: UITextFieldDelegate {
         }
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        <#code#>
-//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let dotString = "."
+        let character = "$"
+
+        if textField == firstPercentTextfield {
+            if let text = textField.text{
+                
+                if !text.contains(character){
+                    firstPercentTextfield.text = "\(character) \(text)"
+                }
+                let isDeleteKey = string.isEmpty
+
+                if !isDeleteKey {
+                    if text.contains(dotString) {
+                        if text.components(separatedBy: dotString)[1].count == 2 || string == "."  {
+                            return false
+                        }
+                    }
+                }
+            }
+        }
+        else if textField == secondPercentTextfield {
+            if let text = textField.text{
+                
+                if !text.contains(character){
+                    secondPercentTextfield.text = "\(character) \(text)"
+                }
+                let isDeleteKey = string.isEmpty
+
+                if !isDeleteKey {
+                    if text.contains(dotString) {
+                        if text.components(separatedBy: dotString)[1].count == 2 || string == "."  {
+                            return false
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            if let text = textField.text{
+                
+                if !text.contains(character){
+                    thirdPercentTextfield.text = "\(character) \(text)"
+                }
+                let isDeleteKey = string.isEmpty
+
+                if !isDeleteKey {
+                    if text.contains(dotString) {
+                        if text.components(separatedBy: dotString)[1].count == 2 || string == "."  {
+                            return false
+                        }
+                    }
+                }
+            }
+        }
+            
+        
+
+        
+        
+        return true
+    }
+    
+
 
 }

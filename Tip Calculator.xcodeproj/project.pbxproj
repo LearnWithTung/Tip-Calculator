@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		180806FE2577E28F00AA699F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180806FD2577E28F00AA699F /* ViewController.swift */; };
 		180807422578F06B00AA699F /* CodeBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180807412578F06B00AA699F /* CodeBasedViewController.swift */; };
+		18FB40B4257F801E0090BD81 /* InputStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FB40B3257F801E0090BD81 /* InputStackView.xib */; };
+		18FB40B8257F82CC0090BD81 /* Viewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB40B7257F82CC0090BD81 /* Viewcontroller2.swift */; };
+		18FB40BB257F84ED0090BD81 /* InputStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB40BA257F84ED0090BD81 /* InputStackView.swift */; };
 		18FD11B725779E0000BFF2B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FD11B625779E0000BFF2B8 /* Main.storyboard */; };
 		DF2DB7D125776012005F922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DB7D025776012005F922C /* AppDelegate.swift */; };
 		DF2DB7D325776012005F922C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DB7D225776012005F922C /* SceneDelegate.swift */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		180806FD2577E28F00AA699F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		180807412578F06B00AA699F /* CodeBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBasedViewController.swift; sourceTree = "<group>"; };
+		18FB40B3257F801E0090BD81 /* InputStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputStackView.xib; sourceTree = "<group>"; };
+		18FB40B7257F82CC0090BD81 /* Viewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewcontroller2.swift; sourceTree = "<group>"; };
+		18FB40BA257F84ED0090BD81 /* InputStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStackView.swift; sourceTree = "<group>"; };
 		18FD11B625779E0000BFF2B8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DF2DB7CD25776012005F922C /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2DB7D025776012005F922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +66,12 @@
 			children = (
 				DF2DB7D025776012005F922C /* AppDelegate.swift */,
 				180806FD2577E28F00AA699F /* ViewController.swift */,
+				18FB40B7257F82CC0090BD81 /* Viewcontroller2.swift */,
 				DF2DB7D225776012005F922C /* SceneDelegate.swift */,
 				DF2DB7D925776014005F922C /* Assets.xcassets */,
 				18FD11B625779E0000BFF2B8 /* Main.storyboard */,
+				18FB40B3257F801E0090BD81 /* InputStackView.xib */,
+				18FB40BA257F84ED0090BD81 /* InputStackView.swift */,
 				180807412578F06B00AA699F /* CodeBasedViewController.swift */,
 				DF2DB7DB25776014005F922C /* LaunchScreen.storyboard */,
 				DF2DB7DE25776014005F922C /* Info.plist */,
@@ -128,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FD11B725779E0000BFF2B8 /* Main.storyboard in Resources */,
+				18FB40B4257F801E0090BD81 /* InputStackView.xib in Resources */,
 				DF2DB7DD25776014005F922C /* LaunchScreen.storyboard in Resources */,
 				DF2DB7DA25776014005F922C /* Assets.xcassets in Resources */,
 			);
@@ -142,8 +152,10 @@
 			files = (
 				180806FE2577E28F00AA699F /* ViewController.swift in Sources */,
 				180807422578F06B00AA699F /* CodeBasedViewController.swift in Sources */,
+				18FB40BB257F84ED0090BD81 /* InputStackView.swift in Sources */,
 				DF2DB7D125776012005F922C /* AppDelegate.swift in Sources */,
 				DF2DB7D325776012005F922C /* SceneDelegate.swift in Sources */,
+				18FB40B8257F82CC0090BD81 /* Viewcontroller2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
