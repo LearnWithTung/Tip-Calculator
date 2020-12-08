@@ -128,11 +128,11 @@ class CodeBasedViewcontroller: UIViewController {
         addSubViews()
         custom()
         customStack()
-        firstTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.textField1DidChange(_:)), for: .editingDidEnd)
+        firstTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.textField1DidChange(_:)), for: .editingChanged)
         firstTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.ClearText1(_:)), for: .allTouchEvents)
-        secondTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.textField2DidChange(_:)), for: .editingDidEnd)
+        secondTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.textField2DidChange(_:)), for: .editingChanged)
         secondTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.ClearText2(_:)), for: .allTouchEvents)
-        thirdTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.textField3DidChange(_:)), for: .editingDidEnd)
+        thirdTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.textField3DidChange(_:)), for: .editingChanged)
         thirdTextField.addTarget(self, action: #selector(CodeBasedViewcontroller.ClearText3(_:)), for: .allTouchEvents)
     }
     
@@ -154,29 +154,33 @@ class CodeBasedViewcontroller: UIViewController {
         thirdTextField.text = ""
     }
     @objc func textField1DidChange(_ textField: UITextField) {
-        number1 = Float(firstTextField.text!) ?? 0
-        firstTextField.text = "$"+firstTextField.text!
+        if let txt = firstTextField.text {
+            number1 = Float(txt) ?? 0
+            if txt.count <= 1 && txt != "$" {
+                firstTextField.text = "$\(firstTextField.text!)"
+            }
+        }
     }
     
     @objc func textField2DidChange(_ textField: UITextField) {
-        number2 = Float(secondTextField.text!) ?? 0
-        secondTextField.text = "$"+secondTextField.text!
+        if let txt = secondTextField.text {
+            number2 = Float(secondTextField.text!) ?? 0
+            if txt.count <= 1 && txt != "$" {
+                secondTextField.text = "$\(secondTextField.text!)"
+            }
+        }
     }
     
     @objc func textField3DidChange(_ textField: UITextField) {
-        number3 = Float(thirdTextField.text!) ?? 0
-        thirdTextField.text = "$"+thirdTextField.text!
+        if let txt = thirdTextField.text  {
+            number3 = Float(thirdTextField.text!) ?? 0
+            if txt.count <= 1 && txt != "$" {
+                thirdTextField.text = "$\(thirdTextField.text!)"
+            }
+        }
     }
     
     @objc private func handelCalculateTip(){
-//        guard let first = firstTextField.text,
-//              let second = secondTextField.text,
-//              let third = thirdTextField.text else {
-//            return
-//        }
-//        number1 = Float(first) ?? 0
-//        number2 = Float(second) ?? 0
-//        number3 = Float(third) ?? 0
         result = number1 + number2 + number3 + 0.2*number1 + 0.1*number2 + 0.1*number3
         yourBillTextFied.text = "$"+String(result)
     }

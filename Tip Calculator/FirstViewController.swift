@@ -21,40 +21,95 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstTextField.addTarget(self, action: #selector(FirstViewController.textField1DidChange(_:)), for: .editingDidEnd)
-        firstTextField.addTarget(self, action: #selector(FirstViewController.ClearText1(_:)), for: .allTouchEvents)
-        secondTextField.addTarget(self, action: #selector(FirstViewController.textField2DidChange(_:)), for: .editingDidEnd)
-        secondTextField.addTarget(self, action: #selector(FirstViewController.ClearText2(_:)), for: .allTouchEvents)
-        thirdTextField.addTarget(self, action: #selector(FirstViewController.textField3DidChange(_:)), for: .editingDidEnd)
-        thirdTextField.addTarget(self, action: #selector(FirstViewController.ClearText3(_:)), for: .allTouchEvents)
-    }
-    @objc func ClearText1(_ textField: UITextField) {
-        firstTextField.text = ""
-    }
-    @objc func ClearText2(_ textField: UITextField) {
-        secondTextField.text = ""
-    }
-    @objc func ClearText3(_ textField: UITextField) {
-        thirdTextField.text = ""
-    }
-    @objc func textField1DidChange(_ textField: UITextField) {
-        number1 = Float(firstTextField.text!) ?? 0
-        firstTextField.text = "$"+firstTextField.text!
-    }
+        firstTextField.delegate = self
+        secondTextField.delegate = self
+        thirdTextField.delegate = self
+        dismissKeyboard()
 
-    @objc func textField2DidChange(_ textField: UITextField) {
-        number2 = Float(secondTextField.text!) ?? 0
-        secondTextField.text = "$"+secondTextField.text!
-    }
-
-    @objc func textField3DidChange(_ textField: UITextField) {
-        number3 = Float(thirdTextField.text!) ?? 0
-        thirdTextField.text = "$"+thirdTextField.text!
     }
 
     @IBAction func handelCalculateTipButton(_ sender: Any) {
+        if let txt1 = firstTextField.text {
+            print(txt1)
+            number1 = Float(txt1.dropFirst()) ?? 0
+        }
+        if let txt2 = secondTextField.text{
+            number2 = Float(txt2.dropFirst()) ?? 0
+        }
+        if let txt3 = thirdTextField.text{
+            number3 = Float(txt3.dropFirst()) ?? 0
+        }
         result = number1 + number2 + number3 + 0.2*number1 + 0.1*number2 + 0.1*number3
         resultTextField.text = "$"+String(result)
     }
 
+}
+
+extension FirstViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let dotString = "."
+        let character = "$"
+        if textField == firstTextField {
+            if let text = firstTextField.text{
+                if !text.contains(character){
+                    firstTextField.text = "\(character)\(text)"
+                }
+                let isDeleteKey = string.isEmpty
+                if !isDeleteKey {
+                    if text.contains(dotString) {
+                        if text.components(separatedBy: dotString)[1].count == 2 || string == "."  {
+                            return false
+                        }
+                    }
+                }
+            }
+        }
+        else if textField == secondTextField {
+            if let text = secondTextField.text{
+                print(text)
+                if !text.contains(character){
+                    secondTextField.text = "\(character)\(text)"
+                }
+                let isDeleteKey = string.isEmpty
+                if !isDeleteKey {
+                    if text.contains(dotString) {
+                        if text.components(separatedBy: dotString)[1].count == 2 || string == "."  {
+                            return false
+                        }
+                    }
+                }
+            }
+        }
+        else if textField == thirdTextField {
+            if let text = thirdTextField.text{
+                print(text)
+                if !text.contains(character){
+                    thirdTextField.text = "\(character)\(text)"
+                }
+                let isDeleteKey = string.isEmpty
+                if !isDeleteKey {
+                    if text.contains(dotString) {
+                        if text.components(separatedBy: dotString)[1].count == 2 || string == "."  {
+                            return false
+                        }
+                    }
+                }
+            }
+
+        }
+        return true
+    }
+    
+}
+
+extension UIViewController {
+    func dismissKeyboard() {
+           let tap: UITapGestureRecognizer = UITapGestureRecognizer( target:     self, action:    #selector(UIViewController.dismissKeyboardTouchOutside))
+           tap.cancelsTouchesInView = false
+           view.addGestureRecognizer(tap)
+        }
+        
+        @objc private func dismissKeyboardTouchOutside() {
+           view.endEditing(true)
+        }
 }
